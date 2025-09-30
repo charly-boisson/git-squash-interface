@@ -1,0 +1,47 @@
+# Node dependencies
+node_modules/
+
+
+# Build outputs
+out/
+dist/
+*.tsbuildinfo
+
+# VS Code specific
+.vscode-test/
+.vscode-test.*
+.vscode-test-insiders/
+.vscode-test-stable/
+.vscode-test-web/
+.vscode-test-exploration/
+
+# Local VSCode settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.history/
+
+# Coverage & testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+logs/
+*.log
+*.log.*
+report.[0-9]*
+report-*.json
+*.pid
+*.seed
+*.tgz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.test
+.env.local
