@@ -9,16 +9,46 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gitSquashCommits",
+          "title": "Commits",
+          "icon": "resources/git-squash.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitSquashCommits": [
+        {
+          "id": "gitSquashCommitsView",
+          "name": "Commits",
+          "type": "webview"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "gitSquashCommits.refresh",
+          "when": "view == gitSquashCommitsView",
+          "group": "navigation"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "git-squash-interface.helloWorld",
-        "title": "Hello World"
+        "command": "gitSquashCommits.refresh",
+        "title": "Rafraîchir",
+        "icon": "$(refresh)"
       }
     ]
   },
+  "activationEvents": [
+    "onView:gitSquashCommitsView"
+  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
